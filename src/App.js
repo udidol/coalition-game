@@ -28,7 +28,11 @@ class App extends Component {
   }
 
   onButtonClicked(event) {
+    event.preventDefault();
+    event.stopPropagation();
     let partyToUpdate = event.target.name;
+    console.log(event);
+    //console.log(partyToUpdate);
     this.setState(prevState => ({
       parties: {
         ...prevState.parties, 

@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   margin: auto;
-  max-width: 600px;
+  max-width: 800px;
   font-family: 'Open Sans Hebrew';
 }
 
@@ -17,7 +17,7 @@
 }
 
 .coalitionImage, .parties {
-  width: 300px;
+  width: 400px;
   text-align: center;
 }
 
@@ -53,4 +53,8 @@
 .darkblue {
   border-color: darkblue !important;
   color: darkblue !important;
+}
+
+strong {
+  pointer-events:none;
 }
