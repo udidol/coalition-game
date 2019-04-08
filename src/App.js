@@ -50,16 +50,16 @@ class App extends Component {
           </div>
           <div className="coalitionImage">Coalition Image</div>
           <div className="parties">
-            <Party partyName={parties.likud.name} partyNameHebrew={parties.likud.hebrewName} color={this.state.parties.likud.color} isClicked={this.state.parties.likud.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.kacholLavan.name} partyNameHebrew={this.state.parties.kacholLavan.hebrewName} color={this.state.parties.kacholLavan.color} isClicked={this.state.parties.kacholLavan.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.haAvoda.name} partyNameHebrew={this.state.parties.haAvoda.hebrewName} color={this.state.parties.haAvoda.color} isClicked={this.state.parties.haAvoda.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.yahadutHatora.name} partyNameHebrew={this.state.parties.yahadutHatora.hebrewName} color={this.state.parties.yahadutHatora.color} isClicked={this.state.parties.yahadutHatora.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.meretz.name} partyNameHebrew={this.state.parties.meretz.hebrewName} color={this.state.parties.meretz.color} isClicked={this.state.parties.meretz.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.hayeminHachadash.name} partyNameHebrew={this.state.parties.hayeminHachadash.hebrewName} color={this.state.parties.hayeminHachadash.color} isClicked={this.state.parties.hayeminHachadash.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.zehut.name} partyNameHebrew={this.state.parties.zehut.hebrewName} color={this.state.parties.zehut.color} isClicked={this.state.parties.zehut.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.hadashTaal.name} partyNameHebrew={this.state.parties.hadashTaal.hebrewName} color={this.state.parties.hadashTaal.color} isClicked={this.state.parties.hadashTaal.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.ichudYamin.name} partyNameHebrew={this.state.parties.ichudYamin.hebrewName} color={this.state.parties.ichudYamin.color} isClicked={this.state.parties.ichudYamin.clicked} onClicked={this.onButtonClicked} />
-            <Party partyName={parties.kulanu.name} partyNameHebrew={this.state.parties.kulanu.hebrewName} color={this.state.parties.kulanu.color} isClicked={this.state.parties.kulanu.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.likud.name} partyNameHebrew={parties.likud.hebrewName} mandates={parties.likud.numOfMandates} color={parties.likud.color} isClicked={parties.likud.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.kacholLavan.name} partyNameHebrew={parties.kacholLavan.hebrewName} mandates={parties.kacholLavan.numOfMandates} color={parties.kacholLavan.color} isClicked={parties.kacholLavan.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.haAvoda.name} partyNameHebrew={parties.haAvoda.hebrewName} mandates={parties.haAvoda.numOfMandates} color={parties.haAvoda.color} isClicked={parties.haAvoda.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.yahadutHatora.name} partyNameHebrew={parties.yahadutHatora.hebrewName} mandates={parties.yahadutHatora.numOfMandates} color={parties.yahadutHatora.color} isClicked={parties.yahadutHatora.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.meretz.name} partyNameHebrew={parties.meretz.hebrewName} mandates={parties.meretz.numOfMandates} color={parties.meretz.color} isClicked={parties.meretz.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.hayeminHachadash.name} partyNameHebrew={parties.hayeminHachadash.hebrewName} mandates={parties.hayeminHachadash.numOfMandates} color={parties.hayeminHachadash.color} isClicked={parties.hayeminHachadash.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.zehut.name} partyNameHebrew={parties.zehut.hebrewName} mandates={parties.zehut.numOfMandates} color={parties.zehut.color} isClicked={parties.zehut.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.hadashTaal.name} partyNameHebrew={parties.hadashTaal.hebrewName} mandates={parties.hadashTaal.numOfMandates} color={parties.hadashTaal.color} isClicked={parties.hadashTaal.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.ichudYamin.name} partyNameHebrew={parties.ichudYamin.hebrewName} mandates={parties.ichudYamin.numOfMandates} color={parties.ichudYamin.color} isClicked={parties.ichudYamin.clicked} onClicked={this.onButtonClicked} />
+            <Party partyName={parties.kulanu.name} partyNameHebrew={parties.kulanu.hebrewName} mandates={parties.kulanu.numOfMandates} color={parties.kulanu.color} isClicked={parties.kulanu.clicked} onClicked={this.onButtonClicked} />
           </div>
         </div>
       </div>

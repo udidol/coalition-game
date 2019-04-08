@@ -7,12 +7,13 @@ class Party extends Component {
             partyNameHebrew, 
             color,
             isClicked,
+            mandates,
             onClicked
         } = this.props;
 
         return (
             <div className="party-button">
-                <button name={partyName} className={`${color}${isClicked ? ' clicked' : ''}`} onClick={onClicked}>{partyNameHebrew}</button>
+                <button name={partyName} className={`${color}${isClicked ? ' clicked' : ''}`} onClick={onClicked}><strong>{partyNameHebrew}:</strong> {mandates} מנדטים</button>
             </div>
         );
     }
