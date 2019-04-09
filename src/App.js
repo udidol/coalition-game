@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Party from './components/Party';
+import Coalition from './components/Coalition';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class App extends Component {
         'ichudYamin': { 'name': 'ichudYamin', 'hebrewName': 'איחוד מפלגות הימין', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
         'kulanu': { 'name': 'kulanu', 'hebrewName': 'כולנו', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
       },
-      coalitionMap: 0
+      coalitionMandates: 0
     }
 
     this.onButtonClicked = this.onButtonClicked.bind(this);
@@ -30,8 +31,17 @@ class App extends Component {
   onButtonClicked(event) {
     event.preventDefault();
     event.stopPropagation();
+
     let partyToUpdate = event.target.name;
-    console.log(event);
+
+    if (this.state.parties[partyToUpdate].clicked) {
+      this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates - prevState.parties[partyToUpdate].numOfMandates}));
+    }
+    else if (!this.state.parties[partyToUpdate].clicked) {
+      this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates + prevState.parties[partyToUpdate].numOfMandates}));
+    }
+
+    //console.log(event);
     //console.log(partyToUpdate);
     this.setState(prevState => ({
       parties: {
@@ -52,7 +62,10 @@ class App extends Component {
           <div className="app-title">
             This is an App.
           </div>
-          <div className="coalitionImage">Coalition Image</div>
+          <div className="coalitionContainer">
+            <div className="coalitionMandates">{this.state.coalitionMandates}</div>
+            <Coalition coalitionMandates={this.state.coalitionMandates} />
+          </div>
           <div className="parties">
             <Party partyName={parties.likud.name} partyNameHebrew={parties.likud.hebrewName} mandates={parties.likud.numOfMandates} color={parties.likud.color} isClicked={parties.likud.clicked} onClicked={this.onButtonClicked} />
             <Party partyName={parties.kacholLavan.name} partyNameHebrew={parties.kacholLavan.hebrewName} mandates={parties.kacholLavan.numOfMandates} color={parties.kacholLavan.color} isClicked={parties.kacholLavan.clicked} onClicked={this.onButtonClicked} />
