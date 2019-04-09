@@ -32,7 +32,7 @@ class App extends Component {
     event.preventDefault();
     event.stopPropagation();
 
-    let partyToUpdate = event.target.name;
+    let partyToUpdate = event.currentTarget.name;
 
     if (this.state.parties[partyToUpdate].clicked) {
       this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates - prevState.parties[partyToUpdate].numOfMandates}));
@@ -41,8 +41,6 @@ class App extends Component {
       this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates + prevState.parties[partyToUpdate].numOfMandates}));
     }
 
-    //console.log(event);
-    //console.log(partyToUpdate);
     this.setState(prevState => ({
       parties: {
         ...prevState.parties, 

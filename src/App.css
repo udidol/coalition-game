@@ -1,8 +1,39 @@
+@font-face {
+  font-family: 'Assistant';
+  src: url('./assets/fonts/Assistant-ExtraBold.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/Assistant-ExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/fonts/Assistant-ExtraBold.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/Assistant-ExtraBold.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: extra-bold;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('./assets/fonts/Assistant-Bold.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/Assistant-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/fonts/Assistant-Bold.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/Assistant-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Assistant';
+  src: url('./assets/fonts/Assistant-Regular.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/Assistant-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/fonts/Assistant-Regular.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/Assistant-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: regular;
+}
+
+
+body, div, a, p, span, button, button span {
+  font-family: 'Assistant', Arial;
+  font-weight: normal;
+  font-size: 14px;
+}
+
 .App {
   text-align: center;
   margin: auto;
   max-width: 820px;
-  font-family: 'Open Sans Hebrew';
 }
 
 .App > div {
@@ -40,8 +71,8 @@
   transition: 0.2s ease;
 }
 
-.party-button button:hover {
-  font-size: 14px;
+.party-button button:hover, .party-button button:hover span {
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   border-width: 4px;
@@ -84,6 +115,7 @@
   color: darkblue !important;
 }
 
-strong {
-  pointer-events:none;
+.strong {
+  /* pointer-events:none; */
+  font-weight: bold;
 }
