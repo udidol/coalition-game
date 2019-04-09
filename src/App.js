@@ -58,12 +58,15 @@ class App extends Component {
       <div className="wrapper">
         <div className="App">
           <div className="app-title">
-            This is an App.
+            בחירות 2019
           </div>
           <div className="coalitionContainer">
-            <div className="coalitionMandates">{this.state.coalitionMandates}</div>
+            <div className="coalitionMandates">{this.state.coalitionMandates}<div className="mandatim">מנדטים</div></div>
             <Coalition coalitionMandates={this.state.coalitionMandates} />
+            <div className={`coalitionSuccess${this.state.coalitionMandates >= 61 ? '' : ' hidden'}`}>מזל טוב! יצרת קואליציה!</div>
+            <div className={`coalitionShare${this.state.coalitionMandates >= 61 ? '' : ' hidden'}`}><button>שתף בפייסבוק</button></div>
           </div>
+
           <div className="parties">
             <Party partyName={parties.likud.name} partyNameHebrew={parties.likud.hebrewName} mandates={parties.likud.numOfMandates} color={parties.likud.color} isClicked={parties.likud.clicked} onClicked={this.onButtonClicked} />
             <Party partyName={parties.kacholLavan.name} partyNameHebrew={parties.kacholLavan.hebrewName} mandates={parties.kacholLavan.numOfMandates} color={parties.kacholLavan.color} isClicked={parties.kacholLavan.clicked} onClicked={this.onButtonClicked} />
