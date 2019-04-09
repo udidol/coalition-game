@@ -187,7 +187,12 @@ body, div, a, p, span, button, button span {
 
 .shameless {
   cursor: pointer;
-  margin-bottom: 4px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.shameless-child {
+  margin-bottom: 6px;
 }
 
 .center {

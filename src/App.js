@@ -90,8 +90,10 @@ class App extends Component {
             <Party partyName={parties.kulanu.name} partyNameHebrew={parties.kulanu.hebrewName} mandates={parties.kulanu.numOfMandates} color={parties.kulanu.color} isClicked={parties.kulanu.clicked} onClicked={this.onButtonClicked} />
           </div>
         </div>
-        <div className="center shameless" onClick={this.toggleShameless}>Shameless plug {this.state.shamelessClicked ? '▲' : '▼'}</div>
-        <div className={`center${this.state.shamelessClicked ? '' : ' hidden'}`}>נבנה ע"י <a href="https://www.linkedin.com/in/udidollberg/" target="_blank" rel="noopener noreferrer">אודי דולברג</a></div>
+        <div className="center shameless">
+          <div className="center shameless-child" onClick={this.toggleShameless}>Shameless plug {this.state.shamelessClicked ? '▲' : '▼'}</div>
+          <div className={`center shameless-child${this.state.shamelessClicked ? '' : ' hidden'}`}>נבנה ע"י <a href="https://www.linkedin.com/in/udidollberg/" target="_blank" rel="noopener noreferrer">אודי דולברג</a></div>
+        </div>
       </div>
     );
   }
