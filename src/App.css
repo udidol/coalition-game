@@ -172,6 +172,7 @@ body, div, a, p, span, button, button span {
   background-color: #fff;
   border: 1px solid var(--main-color);
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .darkblue {
@@ -204,22 +205,25 @@ body, div, a, p, span, button, button span {
   animation: fadein 2s;
 }
 
-@media only screen and (max-width: 768px) {
-  .coalitionMandates {
-    margin-top: 3% !important;
-  }
-
-  .coalitionContainer {
-    height: 460px;
-  }
+.hamiflagot {
+  display: none;
 }
 
-
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 768px) {
   .hamiflagot {
     display: block;
   }
 
+  .coalitionContainer, .parties {
+    height: initial;
+  }
+
+  .coalitionMandates {
+    margin-top: 3% !important;
+  }
+}
+
+@media only screen and (max-width: 520px) {
   .seat {
     width: 6px;
   }
@@ -229,12 +233,10 @@ body, div, a, p, span, button, button span {
   }
 
   .coalitionContainer {
-    width: 420px;
-    height: 440px;
+    width: 415px;
   }
   
   .parties {
     width: 200px;
-    height: 440px;
   }
 }

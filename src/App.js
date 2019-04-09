@@ -77,7 +77,7 @@ class App extends Component {
           </div>
 
           <div className="parties">
-            <div className="center" style={{fontSize: '28px', marginBottom: '20px', fontWeight: 'bold'}}>המפלגות</div>
+            <div className="center hamiflagot" style={{fontSize: '28px', marginBottom: '20px', fontWeight: 'bold'}}>המפלגות</div>
             <Party partyName={parties.likud.name} partyNameHebrew={parties.likud.hebrewName} mandates={parties.likud.numOfMandates} color={parties.likud.color} isClicked={parties.likud.clicked} onClicked={this.onButtonClicked} />
             <Party partyName={parties.kacholLavan.name} partyNameHebrew={parties.kacholLavan.hebrewName} mandates={parties.kacholLavan.numOfMandates} color={parties.kacholLavan.color} isClicked={parties.kacholLavan.clicked} onClicked={this.onButtonClicked} />
             <Party partyName={parties.haAvoda.name} partyNameHebrew={parties.haAvoda.hebrewName} mandates={parties.haAvoda.numOfMandates} color={parties.haAvoda.color} isClicked={parties.haAvoda.clicked} onClicked={this.onButtonClicked} />
