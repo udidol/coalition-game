@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 
 class Coalition extends Component {
     seatFactory() {
-        let seatsArr = [];
-        let totalSeats = 0;
+        let seatsArr = [],
+            totalSeats = 0,
+            seatBgColors = '',
+            seatBorderColors = '',
+            seatBackBorderColors = '';
 
         for (let i=0; i<30; i++) {
             for (let j=0; j<4; j++) {
-                seatsArr.push(<div className={`seat s${j}`} key={totalSeats+100} style={{backgroundColor: `${this.props.coalitionMandates > totalSeats ? 'rgba(0, 0, 139, 1)' : 'rgba(0, 0, 139, 0)'}`, top: `${-0.132*i*i+3.96*i+30*j}px`, left: `${3*i+5.5}%` }}><div className="seatBack"></div></div>);
+                seatBgColors = this.props.coalitionMandates > totalSeats ? 'rgba(69, 117, 204, 1)' : 'rgba(69, 117, 139, 0)';
+                seatBorderColors = this.props.coalitionMandates > totalSeats ? '#4575CC' : '#adadad';
+                seatBackBorderColors = this.props.coalitionMandates > totalSeats ? '#ffffff' : '#adadad';
+
+                seatsArr.push(<div className={`seat s${j}`} key={totalSeats+100} style={{backgroundColor: `${seatBgColors}`, borderColor: `${seatBorderColors}`, top: `${-0.132*i*i+3.96*i+30*j}px`, left: `${3*i+5.5}%` }}><div className="seatBack" style={{borderColor: `${seatBackBorderColors}`}}></div></div>);
                 totalSeats++;
             }
         }

@@ -22,10 +22,12 @@ class App extends Component {
         'ichudYamin': { 'name': 'ichudYamin', 'hebrewName': 'איחוד מפלגות הימין', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
         'kulanu': { 'name': 'kulanu', 'hebrewName': 'כולנו', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
       },
-      coalitionMandates: 0
+      coalitionMandates: 0,
+      shamelessClicked: false
     }
 
     this.onButtonClicked = this.onButtonClicked.bind(this);
+    this.toggleShameless = this.toggleShameless.bind(this);
   }
 
   onButtonClicked(event) {
@@ -51,6 +53,10 @@ class App extends Component {
     }));
   }
 
+  toggleShameless() {
+    this.setState(prevState => ({shamelessClicked: !prevState.shamelessClicked}));
+  }
+
   render() {
     const parties = this.state.parties;
 
@@ -58,7 +64,7 @@ class App extends Component {
       <div className="wrapper">
         <div className="App">
           <div className="app-title">
-            בחירות 2019
+            קואליציומט 2019
           </div>
           <div className="coalitionContainer">
             <div className="coalitionMandates">{this.state.coalitionMandates}<div className="mandatim">מנדטים</div></div>
@@ -80,6 +86,8 @@ class App extends Component {
             <Party partyName={parties.kulanu.name} partyNameHebrew={parties.kulanu.hebrewName} mandates={parties.kulanu.numOfMandates} color={parties.kulanu.color} isClicked={parties.kulanu.clicked} onClicked={this.onButtonClicked} />
           </div>
         </div>
+        <div className="center shameless" onClick={this.toggleShameless}>Shameless plug {this.state.shamelessClicked ? '▲' : '▼'}</div>
+        <div className={`center${this.state.shamelessClicked ? '' : ' hidden'}`}>נבנה ע"י <a href="https://www.linkedin.com/in/udidollberg/" target="_blank" rel="noopener noreferrer">אודי דולברג</a></div>
       </div>
     );
   }

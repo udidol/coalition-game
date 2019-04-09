@@ -13,7 +13,7 @@ class Party extends Component {
 
         return (
             <div className="party-button">
-                <button name={partyName} className={`${color}${isClicked ? ' clicked' : ''}`} onClick={onClicked}><span className="strong">{partyNameHebrew}:</span> {mandates} מנדטים</button>
+                <button name={partyName} className={`${color}${isClicked ? ' clicked' : ''}`} onClick={onClicked}><span className="strong">{partyNameHebrew}</span>&nbsp; ({mandates})</button>
             </div>
         );
     }
