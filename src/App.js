@@ -66,6 +66,9 @@ class App extends Component {
           <div className="app-title">
             קואליציומט 2019
           </div>
+          <div className="center" style={{fontSize: '18px', marginBottom: '20px'}}>
+            לחצו על מפלגה כדי להוסיף/להסיר אותה מהקואליציה
+          </div>
           <div className="coalitionContainer">
             <div className="coalitionMandates">{this.state.coalitionMandates}<div className="mandatim">מנדטים</div></div>
             <Coalition coalitionMandates={this.state.coalitionMandates} />
@@ -74,6 +77,7 @@ class App extends Component {
           </div>
 
           <div className="parties">
+            <div className="center" style={{fontSize: '28px', marginBottom: '20px', fontWeight: 'bold'}}>המפלגות</div>
             <Party partyName={parties.likud.name} partyNameHebrew={parties.likud.hebrewName} mandates={parties.likud.numOfMandates} color={parties.likud.color} isClicked={parties.likud.clicked} onClicked={this.onButtonClicked} />
             <Party partyName={parties.kacholLavan.name} partyNameHebrew={parties.kacholLavan.hebrewName} mandates={parties.kacholLavan.numOfMandates} color={parties.kacholLavan.color} isClicked={parties.kacholLavan.clicked} onClicked={this.onButtonClicked} />
             <Party partyName={parties.haAvoda.name} partyNameHebrew={parties.haAvoda.hebrewName} mandates={parties.haAvoda.numOfMandates} color={parties.haAvoda.color} isClicked={parties.haAvoda.clicked} onClicked={this.onButtonClicked} />

@@ -14,7 +14,7 @@ class Coalition extends Component {
                 seatBorderColors = this.props.coalitionMandates > totalSeats ? '#4575CC' : '#adadad';
                 seatBackBorderColors = this.props.coalitionMandates > totalSeats ? '#ffffff' : '#adadad';
 
-                seatsArr.push(<div className={`seat s${j}`} key={totalSeats+100} style={{backgroundColor: `${seatBgColors}`, borderColor: `${seatBorderColors}`, top: `${-0.132*i*i+3.96*i+30*j}px`, left: `${3*i+5.5}%` }}><div className="seatBack" style={{borderColor: `${seatBackBorderColors}`}}></div></div>);
+                seatsArr.push(<div className={`seat s${j}`} key={totalSeats+100} style={{backgroundColor: `${seatBgColors}`, borderColor: `${seatBorderColors}`, top: `${-0.132*i*i+3.96*i+30*j}px`, left: `${3*i+3.5}%` }}><div className="seatBack" style={{borderColor: `${seatBackBorderColors}`}}></div></div>);
                 totalSeats++;
             }
         }

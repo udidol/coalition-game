@@ -73,11 +73,11 @@ body, div, a, p, span, button, button span {
 }
 
 .coalitionContainer {
-  width: 500px;
+  width: 490px;
 }
 
 .parties {
-  width: 300px;
+  width: 278px;
 }
 
 .party-button {
@@ -202,4 +202,39 @@ body, div, a, p, span, button, button span {
   -ms-animation: fadein 2s; /* Internet Explorer */
   -o-animation: fadein 2s; /* Opera < 12.1 */
   animation: fadein 2s;
+}
+
+@media only screen and (max-width: 768px) {
+  .coalitionMandates {
+    margin-top: 3% !important;
+  }
+
+  .coalitionContainer {
+    height: 460px;
+  }
+}
+
+
+@media only screen and (max-width: 520px) {
+  .hamiflagot {
+    display: block;
+  }
+
+  .seat {
+    width: 6px;
+  }
+
+  .coalitionSuccess {
+    font-size: 2rem;
+  }
+
+  .coalitionContainer {
+    width: 420px;
+    height: 440px;
+  }
+  
+  .parties {
+    width: 200px;
+    height: 440px;
+  }
 }
