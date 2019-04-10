@@ -99,7 +99,7 @@ class App extends Component {
       <div className="wrapper">
         <MetaTags>
           <meta name="description" content={this.state.description} />
-          <meta name="og:description" content={this.state.description} />
+          <meta property="og:description" content={this.state.description} />
         </MetaTags>
         <div className="App">
           <div className="app-title">
