@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Party from './components/Party';
 import Coalition from './components/Coalition';
+import MetaTags from 'react-meta-tags';
 
 class App extends Component {
   constructor(props) {
@@ -21,10 +22,25 @@ class App extends Component {
         'israelBeitenu': { 'name': 'israelBeitenu', 'hebrewName': 'ישראל ביתנו', 'numOfMandates': 5, 'color': this.defaultColor, 'clicked': false },
         'meretz': { 'name': 'meretz', 'hebrewName': 'מרצ', 'numOfMandates': 4, 'color': this.defaultColor, 'clicked': false },
         'kulanu': { 'name': 'kulanu', 'hebrewName': 'כולנו', 'numOfMandates': 4, 'color': this.defaultColor, 'clicked': false },
-        'raamBalad': { 'name': 'raamBalad', 'hebrewName': 'רע"ם-בל"ד', 'numOfMandates': 4, 'color': this.defaultColor, 'clicked': false },
+        'raamBalad': { 'name': 'raamBalad', 'hebrewName': 'רע"ם-בל"ד', 'numOfMandates': 4, 'color': this.defaultColor, 'clicked': false }
       },
       coalitionMandates: 0,
-      shamelessClicked: false
+      shamelessClicked: false,
+      coalition: [],
+      // coalition: { 
+      //   'likud': false,
+      //   'kacholLavan': false,
+      //   'yahadutHatora': false,
+      //   'shas': false,
+      //   'haAvoda': false,
+      //   'hadashTaal': false,
+      //   'ichudYamin': false,
+      //   'israelBeitenu': false,
+      //   'meretz': false,
+      //   'kulanu': false,
+      //   'raamBalad': false
+      // },
+      description: 'הרכיבו קואליציה לפי תוצאות בחירות 2019! שתפו עם חבריכם!'
     }
 
     this.onButtonClicked = this.onButtonClicked.bind(this);
@@ -37,10 +53,28 @@ class App extends Component {
 
     let partyToUpdate = event.currentTarget.name;
 
+    // create copy of the state coalition array
+    let coalitionArr = Array.from(this.state.coalition);
+    let partyIndex = coalitionArr.indexOf(partyToUpdate);
+
     if (this.state.parties[partyToUpdate].clicked) {
+
+      // check if party exists in the coalition array in state, if it does, remove it from the coalition array
+      if (partyIndex !== -1) {
+        coalitionArr.splice(partyIndex, 1);
+        this.setState({coalition: coalitionArr});
+      }
+
       this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates - prevState.parties[partyToUpdate].numOfMandates}));
     }
+
     else if (!this.state.parties[partyToUpdate].clicked) {
+      // check if party exists in the coalition array in state, if it doesn't, add it to the coalition array
+      if (partyIndex === -1) {
+        coalitionArr.push(partyToUpdate);
+        this.setState({coalition: coalitionArr});
+      }
+
       this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates + prevState.parties[partyToUpdate].numOfMandates}));
     }
 
@@ -63,6 +97,10 @@ class App extends Component {
 
     return (
       <div className="wrapper">
+        <MetaTags>
+          <meta name="description" content={this.state.description} />
+          <meta name="og:description" content={this.state.description} />
+        </MetaTags>
         <div className="App">
           <div className="app-title">
             קואליציומט 2019
