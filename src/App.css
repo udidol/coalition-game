@@ -245,3 +245,22 @@ body, div, a, p, span, button, button span {
     width: 200px;
   }
 }
+
+@media only screen and (max-width: 380px) {
+  .seat {
+    width: 5px;
+    height: 12px;
+  }
+
+  .coalitionSuccess {
+    font-size: 2rem;
+  }
+
+  .coalitionContainer {
+    width: 415px;
+  }
+  
+  .parties {
+    width: 200px;
+  }
+}
