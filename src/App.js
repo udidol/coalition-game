@@ -3,6 +3,8 @@ import './App.css';
 import Party from './components/Party';
 import Coalition from './components/Coalition';
 import MetaTags from 'react-meta-tags';
+import { Facebook, Whatsapp, Twitter } from 'react-social-sharing';
+
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +29,7 @@ class App extends Component {
       coalitionMandates: 0,
       shamelessClicked: false,
       coalition: [],
-      // coalition: { 
+      // coalition: {
       //   'likud': false,
       //   'kacholLavan': false,
       //   'yahadutHatora': false,
@@ -47,6 +49,16 @@ class App extends Component {
     this.toggleShameless = this.toggleShameless.bind(this);
   }
 
+  updateMetaDescription() {
+    // Update og description in state
+    let tempDescription = this.state.coalition.join(', ');
+    this.setState({ description: `הקואליציה שלי: ${tempDescription}` }, this.logDescription);
+  }
+
+  logDescription() {
+    console.log(this.state.description);
+  }
+
   onButtonClicked(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -55,29 +67,32 @@ class App extends Component {
 
     // create copy of the state coalition array
     let coalitionArr = Array.from(this.state.coalition);
-    let partyIndex = coalitionArr.indexOf(partyToUpdate);
+    let partyIndex = coalitionArr.indexOf(this.state.parties[partyToUpdate].hebrewName);
 
     if (this.state.parties[partyToUpdate].clicked) {
 
       // check if party exists in the coalition array in state, if it does, remove it from the coalition array
       if (partyIndex !== -1) {
         coalitionArr.splice(partyIndex, 1);
-        this.setState({coalition: coalitionArr});
+        this.setState({coalition: coalitionArr}, this.updateMetaDescription);
       }
 
+      // Update number of coalition mandates in state
       this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates - prevState.parties[partyToUpdate].numOfMandates}));
     }
 
     else if (!this.state.parties[partyToUpdate].clicked) {
       // check if party exists in the coalition array in state, if it doesn't, add it to the coalition array
       if (partyIndex === -1) {
-        coalitionArr.push(partyToUpdate);
-        this.setState({coalition: coalitionArr});
+        coalitionArr.push(this.state.parties[partyToUpdate].hebrewName);
+        this.setState({coalition: coalitionArr}, this.updateMetaDescription);
       }
 
+      // Update number of coalition mandates in state
       this.setState(prevState => ({coalitionMandates: prevState.coalitionMandates + prevState.parties[partyToUpdate].numOfMandates}));
     }
 
+    // Update party button status in state to clicked/not clicked
     this.setState(prevState => ({
       parties: {
         ...prevState.parties, 
@@ -98,7 +113,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <MetaTags>
-          <meta name="description" content={this.state.description} />
+          <meta name="description" content={`${this.state.coalitionMandates >= 61 ? this.state.description : 'הרכיבו קואליציה לפי תוצאות בחירות 2019! שתפו עם חבריכם!'}`} />
           <meta property="og:description" content={this.state.description} />
         </MetaTags>
         <div className="App">
@@ -111,8 +126,15 @@ class App extends Component {
           <div className="coalitionContainer">
             <div className="coalitionMandates">{this.state.coalitionMandates}<div className="mandatim">מנדטים</div></div>
             <Coalition coalitionMandates={this.state.coalitionMandates} />
-            <div className={`coalitionSuccess${this.state.coalitionMandates >= 61 ? '' : ' hidden'}`}>מזל טוב! יצרת קואליציה!</div>
-            <div className={`coalitionShare${this.state.coalitionMandates >= 61 ? '' : ' hidden'}`}><button>שתף בפייסבוק</button></div>
+            <div className={`${this.state.coalitionMandates >= 61 ? '' : ' hidden'}`}>
+              <div className="coalitionSuccess">מזל טוב! יצרת קואליציה!</div>
+              <div>
+                <div className="rtl shareTitle center">שתפו:</div>
+                <Facebook link="https://udidollberg.com/coalitiomat2019" />
+                <Twitter link="https://udidollberg.com/coalitiomat2019" />
+                <Whatsapp link="https://udidollberg.com/coalitiomat2019" />
+              </div>
+            </div>
           </div>
 
           <div className="parties">

@@ -39,6 +39,10 @@ body, div, a, p, span, button, button span {
   font-size: 14px;
 }
 
+.rtl {
+  direction: rtl;
+}
+
 .App {
   text-align: center;
   margin: auto;
@@ -161,6 +165,11 @@ body, div, a, p, span, button, button span {
   -ms-animation: fadein 2s; /* Internet Explorer */
   -o-animation: fadein 2s; /* Opera < 12.1 */
   animation: fadein 2s;
+}
+
+.shareTitle {
+  font-size: 18px;
+  margin-bottom: 12px;
 }
 
 .coalitionShare button {
