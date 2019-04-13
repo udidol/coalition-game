@@ -3,7 +3,7 @@ import './App.css';
 import Party from './components/Party';
 import Coalition from './components/Coalition';
 import MetaTags from 'react-meta-tags';
-import { Facebook, Whatsapp, Twitter } from 'react-social-sharing';
+import { Facebook, Whatsapp, Twitter, Linkedin } from 'react-social-sharing';
 
 
 class App extends Component {
@@ -113,7 +113,7 @@ class App extends Component {
 
   render() {
     const parties = this.state.parties;
-    
+
     return (
       <div className="wrapper">
         <MetaTags>
@@ -137,6 +137,7 @@ class App extends Component {
                 <Facebook link={`https://udidollberg.com/coalitiomat2019${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
                 <Twitter link={`https://udidollberg.com/coalitiomat2019${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
                 <Whatsapp link={`https://udidollberg.com/coalitiomat2019${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
+                <Linkedin link={`https://udidollberg.com/coalitiomat2019${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
               </div>
             </div>
           </div>
