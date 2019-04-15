@@ -160,10 +160,6 @@ class App extends Component {
             <Party partyName={parties.raamBalad.name} partyNameHebrew={parties.raamBalad.hebrewName} mandates={parties.raamBalad.numOfMandates} color={parties.raamBalad.color} isClicked={parties.raamBalad.clicked} onClicked={this.onButtonClicked} />
           </div>
         </div>
-        <div className="center shameless">
-          <div className="center shameless-child" onClick={this.toggleShameless}>Shameless plug {this.state.shamelessClicked ? '▲' : '▼'}</div>
-          <div className={`center shameless-child${this.state.shamelessClicked ? '' : ' hidden'}`}>נבנה ע"י <a href="https://www.linkedin.com/in/udidollberg/" target="_blank" rel="noopener noreferrer">אודי דולברג</a></div>
-        </div>
       </div>
     );
   }
