@@ -23,4 +23,4 @@ The app has a small config file, `config.js`, in which you can configure the fol
 - `themeColor`: Controls the website's theme color, works for smartphone browsers like chrome on android. default is `#4575cc`
 
 ## Sharing buttons
-The sharing buttons use the [react-social-sharing package](https://www.npmjs.com/package/react-social-sharing) which implements http://sharingbuttons.io/ in React
+The sharing buttons use the [react-social-sharing NPM package](https://www.npmjs.com/package/react-social-sharing) which implements http://sharingbuttons.io/ in React
