@@ -18,9 +18,9 @@ The app was built using create-react-app, so:
 
 ## App configuration - Important!
 The app has a small config file, `config.js`, in which you can configure the following:
-- appBaseURL: The app's production TLD URL, for example: `'https://www.example.com/'`
-- appSubPath: If the app does not sit in the root directory of your server, you enter the relative path here. For example, if your app sits at `https://www.example.com/apps/coalition-game`, the value would be `apps/coalition-game`
-- themeColor: Controls the website's theme color, works for smartphone browsers like chrome on android. default is `#4575cc`
+- `appBaseURL`: The app's production TLD URL, for example: `'https://www.example.com/'`
+- `appSubPath`: If the app does not sit in the root directory of your server, you enter the relative path here. For example, if your app sits at `https://www.example.com/apps/coalition-game`, the value would be `apps/coalition-game`
+- `themeColor`: Controls the website's theme color, works for smartphone browsers like chrome on android. default is `#4575cc`
 
 ## Sharing buttons
 The sharing buttons use the [react-social-sharing package](https://www.npmjs.com/package/react-social-sharing) which implements http://sharingbuttons.io/ in React
