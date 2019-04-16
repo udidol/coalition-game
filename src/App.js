@@ -14,10 +14,10 @@ class App extends Component {
 
     this.state = {
       parties: {
-        'likud': { 'name': 'likud', 'hebrewName': 'הליכוד', 'numOfMandates': 36, 'color': this.defaultColor, 'clicked': false },
+        'likud': { 'name': 'likud', 'hebrewName': 'הליכוד', 'numOfMandates': 35, 'color': this.defaultColor, 'clicked': false },
         'kacholLavan': { 'name': 'kacholLavan', 'hebrewName': 'כחול-לבן', 'numOfMandates': 35, 'color': this.defaultColor, 'clicked': false },
         'shas': { 'name': 'shas', 'hebrewName': 'ש"ס', 'numOfMandates': 8, 'color': this.defaultColor, 'clicked': false },
-        'yahadutHatora': { 'name': 'yahadutHatora', 'hebrewName': 'יהדות התורה', 'numOfMandates': 7, 'color': this.defaultColor, 'clicked': false },
+        'yahadutHatora': { 'name': 'yahadutHatora', 'hebrewName': 'יהדות התורה', 'numOfMandates': 8, 'color': this.defaultColor, 'clicked': false },
         'haAvoda': { 'name': 'haAvoda', 'hebrewName': 'העבודה', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
         'hadashTaal': { 'name': 'hadashTaal', 'hebrewName': 'חד"ש-תע"ל', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
         'ichudYamin': { 'name': 'ichudYamin', 'hebrewName': 'איחוד מפלגות הימין', 'numOfMandates': 5, 'color': this.defaultColor, 'clicked': false },
