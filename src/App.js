@@ -5,6 +5,7 @@ import Coalition from './components/Coalition';
 import MetaTags from 'react-meta-tags';
 import { Facebook, Whatsapp, Twitter, Linkedin } from 'react-social-sharing';
 import Config from './config';
+import MandateCount from './mandateCount';
 
 class App extends Component {
   constructor(props) {
@@ -14,17 +15,17 @@ class App extends Component {
 
     this.state = {
       parties: {
-        'likud': { 'name': 'likud', 'hebrewName': 'הליכוד', 'numOfMandates': 35, 'color': this.defaultColor, 'clicked': false },
-        'kacholLavan': { 'name': 'kacholLavan', 'hebrewName': 'כחול-לבן', 'numOfMandates': 35, 'color': this.defaultColor, 'clicked': false },
-        'shas': { 'name': 'shas', 'hebrewName': 'ש"ס', 'numOfMandates': 8, 'color': this.defaultColor, 'clicked': false },
-        'yahadutHatora': { 'name': 'yahadutHatora', 'hebrewName': 'יהדות התורה', 'numOfMandates': 8, 'color': this.defaultColor, 'clicked': false },
-        'haAvoda': { 'name': 'haAvoda', 'hebrewName': 'העבודה', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
-        'hadashTaal': { 'name': 'hadashTaal', 'hebrewName': 'חד"ש-תע"ל', 'numOfMandates': 6, 'color': this.defaultColor, 'clicked': false },
-        'ichudYamin': { 'name': 'ichudYamin', 'hebrewName': 'איחוד מפלגות הימין', 'numOfMandates': 5, 'color': this.defaultColor, 'clicked': false },
-        'israelBeitenu': { 'name': 'israelBeitenu', 'hebrewName': 'ישראל ביתנו', 'numOfMandates': 5, 'color': this.defaultColor, 'clicked': false },
-        'meretz': { 'name': 'meretz', 'hebrewName': 'מרצ', 'numOfMandates': 4, 'color': this.defaultColor, 'clicked': false },
-        'kulanu': { 'name': 'kulanu', 'hebrewName': 'כולנו', 'numOfMandates': 4, 'color': this.defaultColor, 'clicked': false },
-        'raamBalad': { 'name': 'raamBalad', 'hebrewName': 'רע"ם-בל"ד', 'numOfMandates': 4, 'color': this.defaultColor, 'clicked': false }
+        'likud': { 'name': 'likud', 'hebrewName': 'הליכוד', 'numOfMandates': MandateCount.likud, 'color': this.defaultColor, 'clicked': false },
+        'kacholLavan': { 'name': 'kacholLavan', 'hebrewName': 'כחול-לבן', 'numOfMandates': MandateCount.kacholLavan, 'color': this.defaultColor, 'clicked': false },
+        'shas': { 'name': 'shas', 'hebrewName': 'ש"ס', 'numOfMandates': MandateCount.shas, 'color': this.defaultColor, 'clicked': false },
+        'yahadutHatora': { 'name': 'yahadutHatora', 'hebrewName': 'יהדות התורה', 'numOfMandates': MandateCount.yahadutHatora, 'color': this.defaultColor, 'clicked': false },
+        'haAvoda': { 'name': 'haAvoda', 'hebrewName': 'העבודה', 'numOfMandates': MandateCount.haAvoda, 'color': this.defaultColor, 'clicked': false },
+        'hadashTaal': { 'name': 'hadashTaal', 'hebrewName': 'חד"ש-תע"ל', 'numOfMandates': MandateCount.hadashTaal, 'color': this.defaultColor, 'clicked': false },
+        'ichudYamin': { 'name': 'ichudYamin', 'hebrewName': 'איחוד מפלגות הימין', 'numOfMandates': MandateCount.ichudYamin, 'color': this.defaultColor, 'clicked': false },
+        'israelBeitenu': { 'name': 'israelBeitenu', 'hebrewName': 'ישראל ביתנו', 'numOfMandates': MandateCount.israelBeitenu, 'color': this.defaultColor, 'clicked': false },
+        'meretz': { 'name': 'meretz', 'hebrewName': 'מרצ', 'numOfMandates': MandateCount.meretz, 'color': this.defaultColor, 'clicked': false },
+        'kulanu': { 'name': 'kulanu', 'hebrewName': 'כולנו', 'numOfMandates': MandateCount.kulanu, 'color': this.defaultColor, 'clicked': false },
+        'raamBalad': { 'name': 'raamBalad', 'hebrewName': 'רע"ם-בל"ד', 'numOfMandates': MandateCount.raamBalad, 'color': this.defaultColor, 'clicked': false }
       },
       coalitionMandates: 0,
       shamelessClicked: false,
