@@ -3,6 +3,8 @@
 This is a simple frontend-only application that lets you build (and share!) a coalition following the 2019 Israeli national election results. 
 The repo is updated with the latest results from the central election committee for eligible parties and mandate divisions.
 
+**Demo**: https://www.udidollberg.com/coalitiomat2019/
+
 ## Installation
 
 1. Clone the repo.
