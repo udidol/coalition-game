@@ -4,13 +4,13 @@ import Party from './components/Party';
 import Coalition from './components/Coalition';
 import MetaTags from 'react-meta-tags';
 import { Facebook, Whatsapp, Twitter, Linkedin } from 'react-social-sharing';
-
+import Config from './config';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.defaultColor = 'darkblue';
+    this.defaultColor = Config.themeColor;
 
     this.state = {
       parties: {
@@ -131,10 +131,10 @@ class App extends Component {
               <div className="coalitionSuccess">מזל טוב! יצרת קואליציה!</div>
               <div>
                 <div className="rtl shareTitle center">שתפו:</div>
-                <Facebook link={`https://udidollberg.com/coalitiomat2020${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
-                <Twitter link={`https://udidollberg.com/coalitiomat2020${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
-                <Whatsapp link={`https://udidollberg.com/coalitiomat2020${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
-                <Linkedin link={`https://udidollberg.com/coalitiomat2020${this.state.urlParams !== "" ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
+                <Facebook link={`${Config.appURLBase+Config.appSubPath}${this.state.urlParams !== [] ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
+                <Twitter link={`${Config.appURLBase+Config.appSubPath}${this.state.urlParams !== [] ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
+                <Whatsapp link={`${Config.appURLBase+Config.appSubPath}${this.state.urlParams !== [] ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
+                <Linkedin link={`${Config.appURLBase+Config.appSubPath}${this.state.urlParams !== [] ? `?coalition=${this.state.urlParams.join('+')}` : ''}`} />
               </div>
             </div>
           </div>
@@ -150,10 +150,6 @@ class App extends Component {
             <Party partyName={parties.yemina.name} partyNameHebrew={parties.yemina.hebrewName} mandates={parties.yemina.numOfMandates} color={parties.yemina.color} isClicked={parties.yemina.clicked} onClicked={this.onButtonClicked} />
             <Party partyName={parties.israelBeitenu.name} partyNameHebrew={parties.israelBeitenu.hebrewName} mandates={parties.israelBeitenu.numOfMandates} color={parties.israelBeitenu.color} isClicked={parties.israelBeitenu.clicked} onClicked={this.onButtonClicked} />
           </div>
-        </div>
-        <div className="center shameless">
-          <div className="center shameless-child" onClick={this.toggleShameless}>Shameless plug {this.state.shamelessClicked ? '▲' : '▼'}</div>
-          <div className={`center shameless-child${this.state.shamelessClicked ? '' : ' hidden'}`}>נבנה ע"י <a href="https://www.linkedin.com/in/udidollberg/" target="_blank" rel="noopener noreferrer">אודי דולברג</a></div>
         </div>
       </div>
     );
